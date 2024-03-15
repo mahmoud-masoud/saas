@@ -23,28 +23,31 @@ const cardVariants = {
 };
 
 const Cards = () => {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
   const isInView = useInView(containerRef, {
     once: true,
     margin: '-150px',
   });
 
-  const carouselRef = useRef<HTMLDivElement>(null);
-
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
-    setWidth(
-      carouselRef?.current?.scrollWidth - carouselRef?.current?.offsetWidth
-    );
+    if (containerRef.current) {
+      setWidth(
+        containerRef?.current?.scrollWidth -
+          containerRef?.current?.offsetWidth -
+          800
+      );
+    }
   }, []);
 
   return (
-    <section ref={containerRef} className='py-14'>
-      <motion.div className='overflow-hidden' ref={carouselRef}>
+    <section className='py-14'>
+      <motion.div ref={containerRef} className='overflow-hidden'>
         <motion.div
-          // drag='x'
-          // dragConstraints={{ right: 0, left: -width }}
+          drag='x'
+          dragConstraints={{ right: 0, left: -width }}
           variants={cardsContainerVariants}
           initial='initial'
           animate={isInView ? 'animate' : 'initial'}

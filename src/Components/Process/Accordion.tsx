@@ -8,6 +8,7 @@ type Props = {
 };
 
 const Accordion = ({ idx, title, description }: Props) => {
+  console.log(idx);
   const [isOpen, setIsOpen] = useState(false);
 
   return (

@@ -37,7 +37,7 @@ const Overview = () => {
             }}
             className='bg-rose-100 p-4 rounded-full h-14 w-14'
           >
-            <img src='/public/Images/Avatars/beard.png' alt='' />
+            <img src='/Images/Avatars/beard.png' alt='' />
           </motion.div>
           <motion.div
             initial={{ translateX: '100%' }}

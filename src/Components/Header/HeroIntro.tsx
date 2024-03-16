@@ -54,7 +54,7 @@ const HeroIntro = () => {
         variants={headingVariants}
         initial='initial'
         animate='animate'
-        className='text-5xl md:text-6xl text-white md:font-semibold text-center '
+        className='text-4xl md:text-6xl text-white md:font-semibold text-center '
       >
         Efficiency And Productivity With our
         <div className='mt-4 relative justify-center items-center inline-flex'>

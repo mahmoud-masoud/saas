@@ -1,40 +1,63 @@
-import Accordion from './Accordion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const questions = [
-  {
-    title: 'What is SaaS management?',
-    description:
-      'SaaS management refers to the process of overseeing and controlling the usage, performance, and security of software as a service (SaaS) applications within an organization.',
-  },
-  {
-    title: 'How does a SaaS management tool help businesses?',
-    description:
-      'A SaaS management tool helps businesses streamline the management of their SaaS applications by providing insights into usage, costs, security vulnerabilities, and compliance.',
-  },
-  {
-    title: 'What features should I look for in a SaaS management tool?',
-    description:
-      'Key features to consider in a SaaS management tool include application discovery, usage analytics, license optimization, security monitoring, and integration capabilities with other IT systems.',
-  },
-  {
-    title: 'What are the benefits of using a SaaS management platform?',
-    description:
-      'Using a SaaS management platform can lead to cost savings through optimized license usage, improved security posture through better visibility and control, and enhanced productivity by streamlining application access and usage.',
-  },
-];
+type props = {
+  i: number;
+  expanded: false | number;
+  setExpanded: (expanded: false | number) => void;
+};
 
-const Questions = () => {
+const Accordion = ({ i, expanded, setExpanded }: props) => {
+  const isOpen = i === expanded;
   return (
-    <div className='w-full'>
-      {questions.map((item, idx) => (
-        <Accordion
-          idx={idx}
-          key={idx}
-          title={item.title}
-          description={item.description}
-        />
-      ))}
-    </div>
+    <>
+      <motion.header
+        initial={false}
+        animate={{ backgroundColor: isOpen ? '#FF0088' : '#0055FF' }}
+        onClick={() => setExpanded(isOpen ? false : i)}
+        className='h-10 w-full bg-blue-400 mb-6'
+      />
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.section
+            key='content'
+            initial='collapsed'
+            animate='open'
+            exit='collapsed'
+            variants={{
+              open: { opacity: 1, height: 'auto' },
+              collapsed: { opacity: 0, height: 0 },
+            }}
+            transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+          >
+            <div>
+              <motion.p
+                className=''
+                variants={{ collapsed: { scale: 0.8 }, open: { scale: 1 } }}
+                transition={{ duration: 0.8 }}
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+                est error aliquam! Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Ipsum officia est expedita, velit labore
+                pariatur commodi ex aut at asperiores quisquam iure enim harum
+                error modi porro exercitationem voluptatibus non.
+              </motion.p>
+            </div>
+          </motion.section>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
+
+const Questions = () => {
+  const [expanded, setExpanded] = useState<false | number>(0);
+
+  return accordionIds.map((i) => (
+    <Accordion i={i} key={i} expanded={expanded} setExpanded={setExpanded} />
+  ));
+};
+
+const accordionIds = [0, 1, 2, 3];
+
 export default Questions;

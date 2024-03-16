@@ -12,10 +12,7 @@ const Logos = () => {
             .fill(null)
             .map((_, idx) => {
               return (
-                <Logo
-                  src={`public/Images/Logos/logo-${idx + 1}.svg`}
-                  key={idx}
-                />
+                <Logo src={`/Images/Logos/logo-${idx + 1}.svg`} key={idx} />
               );
             })}
         </div>
@@ -24,10 +21,7 @@ const Logos = () => {
             .fill(null)
             .map((_, idx) => {
               return (
-                <Logo
-                  src={`public/Images/Logos/logo-${idx + 1}.svg`}
-                  key={idx}
-                />
+                <Logo src={`/Images/Logos/logo-${idx + 1}.svg`} key={idx} />
               );
             })}
         </div>

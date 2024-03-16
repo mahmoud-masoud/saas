@@ -6,7 +6,7 @@ const SpotIcon = () => {
       xmlns='http://www.w3.org/2000/svg'
       version='1.1'
       viewBox='140 140 330 150'
-      className='w-36 md:w-44 absolute'
+      className='w-32 md:w-44 absolute'
     >
       <defs>
         <linearGradient id='gradient' x1='0%' y1='0%' x2='100%' y2='0%'>

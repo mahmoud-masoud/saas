@@ -9,7 +9,7 @@ const Header = () => {
       <Navbar />
       <Wrapper>
         <HeroIntro />
-        {/* <Overview /> */}
+        <Overview />
       </Wrapper>
     </header>
   );

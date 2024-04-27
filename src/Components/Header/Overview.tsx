@@ -1,5 +1,4 @@
-import { motion, useInView } from 'framer-motion';
-import { Turtle } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { useRef } from 'react';
 // import Avatar from '../Process/Avatar';
 

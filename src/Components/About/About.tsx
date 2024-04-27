@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import Wrapper from '../../UI/Wrapper';
-import TestimonialCard from './TestimonialCard';
 
 const leftCard = {
   initial: { translateX: '-100%', translateY: 200, scale: 0.9 },

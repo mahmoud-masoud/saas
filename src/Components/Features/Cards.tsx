@@ -2,15 +2,12 @@ import { motion, useInView } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import Card from './Card';
 import {
-  ArrowBigDown,
   CalendarClock,
   FileText,
   FolderKanban,
   GanttChart,
   HeartHandshake,
 } from 'lucide-react';
-import { time } from 'console';
-import { sign } from 'crypto';
 
 const cardsContainerVariants = {
   initial: {
@@ -21,15 +18,6 @@ const cardsContainerVariants = {
     transition: {
       duration: 1,
     },
-  },
-};
-
-const cardVariants = {
-  initial: {
-    translateX: 200,
-  },
-  animate: {
-    translateX: 0,
   },
 };
 

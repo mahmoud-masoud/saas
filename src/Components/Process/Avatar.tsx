@@ -46,7 +46,7 @@ const Avatar = () => {
         to-teal-600 from-indigo-800 font-medium flex justify-center itc rounded-3xl'
       >
         <div className='w-40'>
-          <img src='/public/Images/Avatars/avatar.png' alt='' />
+          <img src='/Images/Avatars/avatar.png' alt='' />
         </div>
         <PersonCard />
         <FormCard />

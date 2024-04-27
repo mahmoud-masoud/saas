@@ -1,5 +1,16 @@
 import { motion, useInView } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
+import Card from './Card';
+import {
+  ArrowBigDown,
+  CalendarClock,
+  FileText,
+  FolderKanban,
+  GanttChart,
+  HeartHandshake,
+} from 'lucide-react';
+import { time } from 'console';
+import { sign } from 'crypto';
 
 const cardsContainerVariants = {
   initial: {
@@ -53,27 +64,13 @@ const Cards = () => {
           animate={isInView ? 'animate' : 'initial'}
           className='flex gap-10'
         >
-          {[0, 1, 2, 3].map((index) => (
-            <motion.div
-              key={index}
-              variants={cardVariants}
-              initial='initial'
-              animate={isInView ? 'animate' : 'initial'}
-              className='min-w-96 p-10 rounded-3xl border backdrop-filter
-            border-slate-700 bg-white/10'
-              transition={{ duration: 1, delay: index * 0.2 }}
-            >
-              <div
-                className='h-12 w-12 bg-gradient-to-t from-purple-500
-        to-cyan-500 mb-4 rounded-full'
-              ></div>
-              <h3 className='text-white mb-4'>lab laba sdf asdfjka</h3>
-              <p className='text-slate-400'>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est
-                sint hic tempora id perferendis ipsa iure molestias. Nam
-                doloremque praesentium quaerat quisquam quas
-              </p>
-            </motion.div>
+          {cards.map((item, i) => (
+            <Card
+              key={i}
+              icon={item.icon}
+              title={item.title}
+              content={item.content}
+            />
           ))}
         </motion.div>
       </motion.div>
@@ -82,3 +79,36 @@ const Cards = () => {
 };
 
 export default Cards;
+
+const cards = [
+  {
+    icon: <FolderKanban size={36} />,
+    title: 'Task Management',
+    content:
+      'Effortlessly create, assign, and prioritize tasks with intuitive drag-and-drop functionality. Track task progress in real-time and ensure deadlines are met with customizable alerts and notifications.',
+  },
+  {
+    icon: <HeartHandshake size={36} />,
+    title: 'Team Collaboration',
+    content:
+      'Facilitate seamless collaboration among team members with centralized communication channels. Share files, exchange feedback, and brainstorm ideas effortlessly within the platform.',
+  },
+  {
+    icon: <GanttChart size={36} />,
+    title: 'Gantt Chart',
+    content:
+      'Visualize project timelines and dependencies with interactive Gantt charts. Identify bottlenecks, allocate resources effectively, and keep stakeholders informed about project progress at a glance.',
+  },
+  {
+    icon: <CalendarClock size={36} />,
+    title: 'Time Tracking',
+    content:
+      'Monitor time spent on tasks and projects with precision. Gain insights into team productivity, identify areas for improvement, and optimize resource allocation for better project outcomes.',
+  },
+  {
+    icon: <FileText size={36} />,
+    title: 'Document Management',
+    content:
+      'Centralize project-related documents and files for easy access and sharing. Ensure version control, streamline document approval processes, and maintain a secure repository for sensitive information.',
+  },
+];

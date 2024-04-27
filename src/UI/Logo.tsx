@@ -2,12 +2,10 @@ const Logo = () => {
   return (
     <svg
       id='logo-15'
-      width='49'
-      height='48'
       viewBox='0 0 49 48'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
-      className='max-sm:scale-75'
+      className='max-sm:scale-75 h-10 max-h-full'
     >
       <path
         d='M24.5 12.75C24.5 18.9632 19.4632 24 13.25 24H2V12.75C2 6.53679 7.03679 1.5 13.25 1.5C19.4632 1.5 24.5 6.53679 24.5 12.75Z'

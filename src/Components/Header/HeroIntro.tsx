@@ -5,11 +5,16 @@ const headingVariants = {
   initial: {
     opacity: 0,
     y: -10,
+    transition: {
+      type: 'tween',
+      ease: 'easeInOut',
+    },
   },
   animate: {
     opacity: 1,
     y: 0,
     transition: {
+      type: 'tween',
       duration: 1,
       ease: 'easeInOut',
     },
@@ -49,7 +54,7 @@ const buttonVariants = {
 
 const HeroIntro = () => {
   return (
-    <div className='transition-all max-w-3xl mx-auto text-center py-20 pt-40 md:py-40 lg:py-44'>
+    <div className='max-w-3xl mx-auto text-center py-20 pt-40 md:py-40 lg:py-44'>
       <motion.h1
         variants={headingVariants}
         initial='initial'

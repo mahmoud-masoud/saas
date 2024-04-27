@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import Wrapper from '../../UI/Wrapper';
-// import TestimonialCard from './TestimonialCard';
+import TestimonialCard from './TestimonialCard';
 
 const leftCard = {
   initial: { translateX: '-100%', translateY: 200, scale: 0.9 },
@@ -59,7 +59,10 @@ const About = () => {
           <motion.div
             variants={leftCard}
             initial='initial'
-            animate='animate'
+            whileInView='animate'
+            viewport={{
+              once: true,
+            }}
             className={`p-10 rounded-3xl border backdrop-filter
        border-slate-700 bg-white/10 row-span-2`}
           >
@@ -73,7 +76,10 @@ const About = () => {
           <motion.div
             variants={middleCard}
             initial='initial'
-            animate='animate'
+            whileInView='animate'
+            viewport={{
+              once: true,
+            }}
             className={`p-10 rounded-3xl border backdrop-filter
        border-slate-700 bg-white/10`}
           >
@@ -87,7 +93,10 @@ const About = () => {
           <motion.div
             variants={rightCard}
             initial='initial'
-            animate='animate'
+            whileInView='animate'
+            viewport={{
+              once: true,
+            }}
             className={`p-10 rounded-3xl border backdrop-filter
        border-slate-700 bg-white/10 row-span-2`}
           >
@@ -101,7 +110,10 @@ const About = () => {
           <motion.div
             variants={middleCard}
             initial='initial'
-            animate='animate'
+            whileInView='animate'
+            viewport={{
+              once: true,
+            }}
             className={`p-10 rounded-3xl border backdrop-filter
        border-slate-700 bg-white/10 `}
           >

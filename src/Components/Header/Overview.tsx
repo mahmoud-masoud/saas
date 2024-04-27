@@ -1,4 +1,6 @@
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { Turtle } from 'lucide-react';
+import { useRef } from 'react';
 // import Avatar from '../Process/Avatar';
 
 const containerVariants = {
@@ -16,12 +18,15 @@ const containerVariants = {
 };
 
 const Overview = () => {
+  const ref = useRef(null);
+
   return (
-    <div className='relative max-md:scale-75 max-w-4xl mx-auto'>
+    <div ref={ref} className='relative max-md:scale-75 max-w-4xl mx-auto'>
       <motion.div
         variants={containerVariants}
         initial='hidden'
-        animate='show'
+        whileInView='show'
+        viewport={{ once: true }}
         className='flex flex-col max-w-xl mx-auto items-center h-96 bg-gradient-to-tr p-10
      from-indigo-800 to-cyan-700 rounded-3xl'
       >
@@ -29,47 +34,59 @@ const Overview = () => {
         <motion.div className='flex items-end gap-2'>
           <motion.div
             initial={{ translateX: '200%' }}
-            animate={{ translateX: '0' }}
+            whileInView={{ translateX: '0' }}
+            viewport={{ once: true }}
             transition={{
               duration: 1,
               type: 'spring',
               delay: 0.2,
             }}
-            className='bg-rose-100 p-4 rounded-full h-14 w-14'
+            className='bg-rose-100 rounded-full h-14 w-14'
           >
-            <img src='/Images/Avatars/beard.png' alt='' />
+            <img src='/Images/Avatars/1.webp' alt='' />
           </motion.div>
           <motion.div
             initial={{ translateX: '100%' }}
-            animate={{ translateX: '0' }}
+            whileInView={{ translateX: '0' }}
+            viewport={{ once: true }}
             transition={{
               duration: 1,
               type: 'spring',
               delay: 0.2,
             }}
-            className='bg-amber-400 p-4 rounded-full h-20 w-20'
-          ></motion.div>
-          <motion.div className='bg-cyan-500 p-4 z-10 rounded-full h-24 w-24'></motion.div>
+            className=' rounded-full h-20 w-20'
+          >
+            <img src='/Images/Avatars/2.webp' alt='' />
+          </motion.div>
+          <motion.div className=' z-10 rounded-full h-24 w-24'>
+            <img src='/Images/Avatars/3.webp' alt='' />
+          </motion.div>
           <motion.div
             initial={{ translateX: '-100%' }}
-            animate={{ translateX: '0' }}
+            whileInView={{ translateX: '0' }}
+            viewport={{ once: true }}
             transition={{
               duration: 1,
               type: 'spring',
               delay: 0.2,
             }}
-            className='bg-orange-600 p-4 rounded-full h-20 w-20'
-          ></motion.div>
+            className='rounded-full h-20 w-20'
+          >
+            <img src='/Images/Avatars/4.webp' alt='' />
+          </motion.div>
           <motion.div
             initial={{ translateX: '-200%' }}
-            animate={{ translateX: '0' }}
+            whileInView={{ translateX: '0' }}
+            viewport={{ once: true }}
             transition={{
               duration: 1,
               type: 'spring',
               delay: 0.2,
             }}
-            className='bg-emerald-500 p-4 rounded-full h-14 w-14'
-          ></motion.div>
+            className='rounded-full h-14 w-14'
+          >
+            <img src='/Images/Avatars/5.webp' alt='' />
+          </motion.div>
         </motion.div>
 
         <div className='flex justify-between mt-10 gap-4'>
@@ -98,12 +115,12 @@ const Overview = () => {
       </div>
 
       <div
-        className='px-8 py-3 bg-white text-slate-700 
+        className='px-8 py-3 bg-gradient-to-br from-white to-violet-400 text-slate-700 
       rounded-xl w-fit right-0 top-1/2 font-medium h-fit
        absolute shadow-md translate-x-1/2'
       >
-        Total Balance
-        <span className='block font-bold text-xl'>$350.25</span>
+        Customers
+        <span className='block font-bold text-xl'>3440</span>
       </div>
     </div>
   );

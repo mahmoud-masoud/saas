@@ -15,7 +15,6 @@ const App = () => {
       <main>
         <Features />
         <Process />
-
         <Pricing />
         <About />
         <GettingStarted />

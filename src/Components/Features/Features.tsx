@@ -1,7 +1,5 @@
 import Wrapper from '../../UI/Wrapper';
-
-import Cards from './Cards';
-
+import Cards from '../Features/Cards';
 const Features = () => {
   return (
     <section className='py-24 px-4 relative'>
@@ -23,7 +21,6 @@ const Features = () => {
             nesciunt veritatis nisi exercitationem eius molestias magni, sled
           </p>
         </div>
-
         <Cards />
       </Wrapper>
     </section>

@@ -75,17 +75,20 @@ const HeroIntro = () => {
         animate='animate'
         className='text-slate-300 mt-10 max-w-xl mx-auto text-lg'
       >
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-        assumenda, iste dignissimos ipsam beatae facilis
+        Elevate your team's potential with Flexi SaaS. Experience seamless
+        collaboration, unmatched efficiency, and remarkable results.
       </motion.p>
 
       <motion.button
         variants={buttonVariants}
         initial='initial'
         animate='animate'
-        className='outline outline-2 outline-offset-4 outline-white mt-10
-           bg-white rounded-full px-5 py-2 
-            text-black font-bold hover:bg-indigo-200 duration-200'
+        whileHover={{
+          translateY: -10,
+        }}
+        className='outline outline-1 outline-offset-4 outline-white mt-12
+           bg-gradient-to-t from-indigo-300 to-white rounded-lg text-xl px-6 py-2 
+            text-slate-800 font-bold'
       >
         Start Free Trail
       </motion.button>

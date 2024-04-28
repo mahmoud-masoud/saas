@@ -54,7 +54,10 @@ const PlusPlanCard = () => {
           </div>
         </div>
 
-        <button className='px-4 py-2 rounded-full text-black font-medium bg-white'>
+        <button
+          className='px-4 py-2 rounded-full text-black font-medium
+         bg-white hover:bg-indigo-100 duration-200'
+        >
           Get started with Plus
         </button>
       </div>

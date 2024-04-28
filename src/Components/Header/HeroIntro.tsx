@@ -85,7 +85,7 @@ const HeroIntro = () => {
         animate='animate'
         className='outline outline-2 outline-offset-4 outline-white mt-10
            bg-white rounded-full px-5 py-2 
-            text-black font-bold '
+            text-black font-bold hover:bg-indigo-200 duration-200'
       >
         Start Free Trail
       </motion.button>

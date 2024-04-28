@@ -25,7 +25,7 @@ const Card = ({ icon, title, content }: props) => {
       variants={cardVariants}
       initial='initial'
       animate='animate'
-      className='p-10 rounded-3xl border backdrop-filter backdrop-blur-md 
+      className='p-6 md:p-8 rounded-3xl border backdrop-filter backdrop-blur-md 
        border-slate-700 bg-white/10 min-w-80 group 
        hover:bg-gradient-to-t from-indigo-500/40 to-cyan-400/30 transition-all duration-150
        

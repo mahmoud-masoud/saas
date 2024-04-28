@@ -2,7 +2,7 @@ import Wrapper from '../../UI/Wrapper';
 import Cards from '../Features/Cards';
 const Features = () => {
   return (
-    <section className='py-24 px-4 relative'>
+    <section className='py-24 px-4 relative' id='features'>
       <div
         className='h-80 w-80 bg-cyan-400 rounded-full
        blur-[150px] bg-opacity-70 absolute right-1/4 -z-10'

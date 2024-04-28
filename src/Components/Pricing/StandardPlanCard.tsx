@@ -104,6 +104,7 @@ const StandardPlanCard = () => {
 
         <button
           className='px-4 py-2 rounded-full text-white bg-gradient-to-tr
+           hover:bg-gradient-to-bl duration-200
           from-indigo-600 to-teal-600 font-medium'
         >
           Get started with Standard

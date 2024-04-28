@@ -1,4 +1,24 @@
 import Logo from '../../UI/Logo';
+import { Link } from 'react-router-dom';
+
+const links = [
+  {
+    path: '#features',
+    name: 'Features',
+  },
+  {
+    path: '#about-us',
+    name: 'About Us',
+  },
+  {
+    path: '#pricing',
+    name: 'Pricing',
+  },
+  {
+    path: 'contact',
+    name: 'Contact',
+  },
+];
 
 const Navbar = () => {
   return (
@@ -8,10 +28,18 @@ const Navbar = () => {
         <h3 className='mt-2 text-xl font-medium'>Flexi SaaS</h3>
       </div>
       <ul className='flex gap-12 text-slate-300'>
-        <li>Features</li>
-        <li>About Us</li>
-        <li>Pricing</li>
-        <li>Contact</li>
+        {links.map((link, i) => {
+          const contactLink = i === links.length - 1;
+          return (
+            <li key={i} className='hover:text-white duration-150'>
+              {contactLink ? (
+                <Link to={link.path}>{link.name}</Link>
+              ) : (
+                <a href={link.path}>{link.name}</a>
+              )}
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );

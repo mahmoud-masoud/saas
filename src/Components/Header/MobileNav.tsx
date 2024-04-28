@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
 
 const containerVariants = {
   initial: { scaleY: 0 },
@@ -45,14 +46,23 @@ const listVariants = {
   },
 };
 
-const navLinks = [
-  { title: 'Features', url: '#features' },
-  { title: 'Pricing', url: '#Pricing' },
-  { title: 'Contact', url: '#contact' },
-  { title: 'About', url: '#about' },
+const links = [
+  {
+    path: '#features',
+    name: 'Features',
+  },
+  {
+    path: '#about-us',
+    name: 'About Us',
+  },
+  {
+    path: '#pricing',
+    name: 'Pricing',
+  },
 ];
-
 const MobileNavbar = ({ onClose }: { onClose: () => void }) => {
+  const isContact = useLocation().pathname === '/contact';
+
   return (
     <motion.div
       variants={containerVariants}
@@ -69,12 +79,30 @@ const MobileNavbar = ({ onClose }: { onClose: () => void }) => {
         exit='exit'
         className='flex-col pt-20 px-4 gap-4'
       >
-        {navLinks.map((link, index) => {
+        <li className='text-4xl' onClick={onClose}>
+          <motion.div variants={navLinksVariants}>
+            <Link to={'/'} className='py-4 inline-block'>
+              Home
+            </Link>
+          </motion.div>
+        </li>
+        <li className='text-4xl' onClick={onClose}>
+          <motion.div variants={navLinksVariants}>
+            <Link to={'contact'} className='py-4 inline-block'>
+              Contact
+            </Link>
+          </motion.div>
+        </li>
+        {links.map((link, index) => {
           return (
-            <li key={index} className='text-4xl py-4'>
+            <li key={index} className={`text-4xl ${isContact ? 'hidden' : ''}`}>
               <motion.div variants={navLinksVariants}>
-                <a className='block' onClick={onClose} href={link.url}>
-                  {link.title}
+                <a
+                  href={link.path}
+                  onClick={onClose}
+                  className='py-4 inline-block'
+                >
+                  {link.name}
                 </a>
               </motion.div>
             </li>

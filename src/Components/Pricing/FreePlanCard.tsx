@@ -43,7 +43,8 @@ const FreePlanCard = () => {
 
         <button
           className='px-4 py-2 rounded-full 
-     bg-indigo-300/15 backdrop-filter border-indigo-900/60 border w-full'
+     bg-indigo-300/15 backdrop-filter border-indigo-900/60 border w-full
+      hover:bg-indigo-300/10 duration-200'
         >
           Get started with Free
         </button>

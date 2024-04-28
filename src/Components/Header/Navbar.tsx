@@ -3,10 +3,11 @@ import Logo from '../../UI/Logo';
 import Wrapper from '../../UI/Wrapper';
 import { useState } from 'react';
 import MobileNavbar from './MobileNav';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const pathName = useLocation().pathname;
   const onClose = () => {
     setIsOpen(false);
   };
@@ -18,19 +19,53 @@ const Navbar = () => {
       ${isOpen ? 'bg-[#000212]' : 'bg-indigo-800/10'} `}
     >
       <Wrapper className='flex justify-between gap-10'>
-        <Logo />
-        <ul className='hidden md:flex justify-between flex-1 max-w-xl gap-6 items-center'>
+        <Link to={'/'} onClick={onClose}>
+          <Logo />
+        </Link>
+        <ul className='hidden md:flex flex-1 max-w-xl gap-6 items-center justify-center'>
           <li>
-            <a href='#'>Features</a>
+            <Link
+              to={'/'}
+              className='hover:bg-slate-200/10 px-4 py-2 duration-300'
+            >
+              Home
+            </Link>
           </li>
+          {pathName === '/' && (
+            <>
+              <li>
+                <a
+                  href='#features'
+                  className='hover:bg-slate-200/10 px-4 py-2 duration-300'
+                >
+                  Features
+                </a>
+              </li>
+              <li>
+                <a
+                  href='#pricing'
+                  className='hover:bg-slate-200/10 px-4 py-2 duration-300'
+                >
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a
+                  href='#about-us'
+                  className='hover:bg-slate-200/10 px-4 py-2 duration-300'
+                >
+                  About Us
+                </a>
+              </li>
+            </>
+          )}
           <li>
-            <a href='#'>Pricing</a>
-          </li>
-          <li>
-            <a href='#'>About Us</a>
-          </li>
-          <li>
-            <a href='#'>Contact</a>
+            <Link
+              to={'contact'}
+              className='hover:bg-slate-200/10 px-4 py-2 duration-300'
+            >
+              Contact
+            </Link>
           </li>
         </ul>
 
@@ -40,8 +75,15 @@ const Navbar = () => {
 
         <div className='flex gap-4 items-center justify-center'>
           <motion.button
-            className=' rounded-full text-sm px-6 h-fit py-2.5 bg-gradient-to-tr
-        to-teal-400 from-indigo-600 font-medium 
+            whileHover={{
+              scale: 1.08,
+            }}
+            transition={{
+              type: 'spring',
+              duration: 0.1,
+            }}
+            className='rounded-full text-sm px-6 h-fit py-2.5 bg-gradient-to-tr
+        to-teal-400 from-indigo-600 font-medium duration-200 
         '
           >
             Get Started

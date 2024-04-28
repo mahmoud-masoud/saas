@@ -16,6 +16,7 @@ export default {
       },
       animation: {
         infinite: 'infinite 6s linear infinite',
+        'spin-fast': 'spin .6s linear infinite',
       },
       keyframes: {
         infinite: {

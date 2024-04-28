@@ -5,7 +5,7 @@ import StandardPlanCard from './StandardPlanCard';
 
 const Pricing = () => {
   return (
-    <section className='py-20 px-4'>
+    <section className='py-20 px-4' id='pricing'>
       <Wrapper className='max-w-6xl'>
         <div className='max-w-xl text-center mx-auto mb-20'>
           <h2 className='text-4xl md:text-6xl text-center text-white font-medium mb-6'>

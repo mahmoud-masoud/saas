@@ -1,26 +1,22 @@
-import About from './Components/About/About';
-import Features from './Components/Features/Features';
-import Footer from './Components/Footer/Footer';
-import GettingStarted from './Components/GettingStarted/GettingStarted';
-import Header from './Components/Header/Header';
-import Logos from './Components/Logos/Logos';
-import Pricing from './Components/Pricing/Pricing';
-import Process from './Components/Process/Process';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Root from './Components/Layout/Root';
+import Home from './Components/Layout/Home';
+import ContactPage from './Components/Contact/Contact';
 
 const App = () => {
-  return (
-    <>
-      <Header />
-      <Logos />
-      <main>
-        <Features />
-        <Process />
-        <Pricing />
-        <About />
-        <GettingStarted />
-        <Footer />
-      </main>
-    </>
-  );
+  const router = createBrowserRouter([
+    { path: '*', element: <div>page not found</div> },
+    {
+      path: '/',
+      element: <Root />,
+
+      children: [
+        { index: true, element: <Home /> },
+        { path: '/contact', element: <ContactPage /> },
+      ],
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 };
 export default App;

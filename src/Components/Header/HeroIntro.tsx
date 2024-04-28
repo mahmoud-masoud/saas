@@ -86,6 +86,9 @@ const HeroIntro = () => {
         whileHover={{
           translateY: -10,
         }}
+        whileTap={{
+          translateY: -10,
+        }}
         className='outline outline-1 outline-offset-4 outline-white mt-12
            bg-gradient-to-t from-indigo-300 to-white rounded-lg text-xl px-6 py-2 
             text-slate-800 font-bold'
